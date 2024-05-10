@@ -20,6 +20,7 @@ const config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
+        serif: ['var(--font-newsreader)'],
       },
       colors: {
         zinc: {
