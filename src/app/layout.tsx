@@ -4,6 +4,7 @@ import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
 import { Newsreader } from 'next/font/google'
 
+import { ThemeProvider } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -23,15 +24,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          GeistSans.variable,
-          newsreader.variable,
-          'min-h-screen bg-zinc-900 font-sans antialiased',
-        )}
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
       >
-        {children}
-      </body>
+        <body
+          className={cn(
+            GeistSans.variable,
+            newsreader.variable,
+            'min-h-screen bg-zinc-900 font-sans antialiased',
+          )}
+        >
+          {children}
+        </body>
+      </ThemeProvider>
     </html>
   )
 }
