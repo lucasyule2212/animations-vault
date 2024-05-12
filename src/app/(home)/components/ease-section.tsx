@@ -1,5 +1,4 @@
-import SimpleBox from '@/components/simple-box'
-import { Card } from '@/components/ui/card'
+import EaseComponent from '@/components/easing-animations/ease-component'
 
 const EaseSection = () => {
   return (
@@ -7,15 +6,10 @@ const EaseSection = () => {
       <header>
         <h2>Easing</h2>
       </header>
-      <Card className="p-6">
-        <SimpleBox />
-      </Card>
-      <Card className="p-6">
-        <SimpleBox />
-      </Card>
-      <Card className="p-6">
-        <SimpleBox />
-      </Card>
+      <EaseComponent easing="linear" />
+      <EaseComponent easing="ease-in" />
+      <EaseComponent easing="ease-out" />
+      <EaseComponent easing="ease-in-out" />
     </section>
   )
 }
