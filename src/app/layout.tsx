@@ -23,23 +23,23 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          GeistSans.variable,
+          newsreader.variable,
+          'min-h-screen overflow-x-hidden bg-zinc-900 font-sans antialiased',
+        )}
       >
-        <body
-          className={cn(
-            GeistSans.variable,
-            newsreader.variable,
-            'min-h-screen bg-zinc-900 font-sans antialiased',
-          )}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
         >
           {children}
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
