@@ -22,6 +22,28 @@ const config = {
         sans: ['var(--font-geist-sans)'],
         serif: ['var(--font-newsreader)'],
       },
+      transitionTimingFunction: {
+        'in-quad': 'var(--ease-in-quad)',
+        'in-cubic': 'var(--ease-in-cubic)',
+        'in-quart': 'var(--ease-in-quart)',
+        'in-quint': 'var(--ease-in-quint)',
+        'in-expo': 'var(--ease-in-expo)',
+        'in-circ': 'var(--ease-in-circ)',
+
+        'out-quad': 'var(--ease-out-quad)',
+        'out-cubic': 'var(--ease-out-cubic)',
+        'out-quart': 'var(--ease-out-quart)',
+        'out-quint': 'var(--ease-out-quint)',
+        'out-expo': 'var(--ease-out-expo)',
+        'out-circ': 'var(--ease-out-circ)',
+
+        'in-out-quad': 'var(--ease-in-out-quad)',
+        'in-out-cubic': 'var(--ease-in-out-cubic)',
+        'in-out-quart': 'var(--ease-in-out-quart)',
+        'in-out-quint': 'var(--ease-in-out-quint)',
+        'in-out-expo': 'var(--ease-in-out-expo)',
+        'in-out-circ': 'var(--ease-in-out-circ)',
+      },
       colors: {
         zinc: {
           900: '#111110',
