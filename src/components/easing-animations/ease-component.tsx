@@ -28,34 +28,37 @@ const EaseComponent = ({ easing = 'linear' }: EaseComponentProps) => {
   }
 
   return (
-    <div className="flex w-full items-center gap-2">
-      <Button
-        variant="outline"
-        size="icon"
-        onClick={() => {
-          setJustify('start')
-        }}
-      >
-        <ArrowLeft />
-      </Button>
-      <Card
-        className={cn(
-          'flex w-full p-6',
-          justifyClass[justify],
-          easingClass[easing],
-        )}
-      >
-        <SimpleBox />
-      </Card>
-      <Button
-        variant="outline"
-        size="icon"
-        onClick={() => {
-          setJustify('end')
-        }}
-      >
-        <ArrowRight />
-      </Button>
+    <div className="mt-4 flex w-full flex-col gap-2">
+      <p className="ml-12 text-sm text-zinc-400">{easing}</p>
+      <div className="flex w-full items-center gap-2">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => {
+            setJustify('start')
+          }}
+        >
+          <ArrowLeft className="h-4 w-4 text-zinc-700" />
+        </Button>
+        <Card
+          className={cn(
+            'flex w-full p-6',
+            justifyClass[justify],
+            easingClass[easing],
+          )}
+        >
+          <SimpleBox />
+        </Card>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => {
+            setJustify('end')
+          }}
+        >
+          <ArrowRight className="h-4 w-4 text-zinc-700" />
+        </Button>
+      </div>
     </div>
   )
 }
