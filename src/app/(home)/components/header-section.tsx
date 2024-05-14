@@ -1,6 +1,6 @@
 const HeaderSection = () => {
   return (
-    <section className="px-52">
+    <section className="sm:px-16 md:px-20 lg:px-32 xl:px-52">
       <header>
         <h1>Animations Vault</h1>
       </header>
