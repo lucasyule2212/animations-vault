@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react'
 
 import { cn } from '@/lib/utils'
 
-import SimpleBox from '../simple-box'
 import { Button } from '../ui/button'
 import { Card } from '../ui/card'
+import SimpleBox from './simple-box'
 
 type EaseComponentProps = {
   easing?: 'ease-in' | 'ease-out' | 'ease-in-out' | 'linear'
