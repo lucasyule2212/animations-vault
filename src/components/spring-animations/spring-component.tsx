@@ -4,14 +4,10 @@ import { Card } from '../ui/card'
 import SimpleBox from './simple-box'
 
 type SpringComponentProps = {
-  animateStatus: string
-  setAnimateStatus: (value: string) => void
+  animateStatus: boolean
 }
 
-const SpringComponent = ({
-  animateStatus,
-  setAnimateStatus,
-}: SpringComponentProps) => {
+const SpringComponent = ({ animateStatus }: SpringComponentProps) => {
   return (
     <div className="mt-4 flex w-full flex-col justify-center gap-2">
       <Card className="relative flex h-[300px] w-full justify-center p-6">
@@ -19,10 +15,7 @@ const SpringComponent = ({
           <div className="w-full rounded-md border border-zinc-600" />
           <p className="text-nowrap text-xs">actual duration</p>
         </div>
-        <SimpleBox
-          animateStatus={animateStatus}
-          setAnimateStatus={setAnimateStatus}
-        />
+        <SimpleBox animateStatus={animateStatus} />
         <div className="absolute top-[205px] z-0 flex  w-[50%] items-center justify-center rounded-md bg-zinc-900 p-6">
           <p className="text-nowrap    text-xs text-zinc-700">bouncing area</p>
         </div>

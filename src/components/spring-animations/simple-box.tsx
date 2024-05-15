@@ -3,27 +3,17 @@
 import { motion } from 'framer-motion'
 
 type SimpleBoxProps = {
-  animateStatus: string
-  setAnimateStatus: (value: string) => void
+  animateStatus: boolean
 }
 
-const SimpleBox = ({ animateStatus, setAnimateStatus }: SimpleBoxProps) => {
+const SimpleBox = ({ animateStatus }: SimpleBoxProps) => {
   return (
     <motion.div
-      onAnimationComplete={() => {
-        setAnimateStatus('stopped')
-      }}
-      animate={
-        animateStatus === 'running'
-          ? {
-              translateY: '150px',
-            }
-          : {}
-      }
+      animate={{ translateY: animateStatus ? 150 : 0 }}
       transition={{
         type: 'spring',
         duration: 2.3,
-        bounce: animateStatus === 'running' ? 0.7 : 0.2,
+        bounce: animateStatus ? 0.7 : 0.2,
       }}
       className="z-10 h-12 w-12 rounded-full border bg-yellow-400 shadow-lg"
     />

@@ -12,10 +12,10 @@ const playButtonVariants = {
 }
 
 const SpringSection = () => {
-  const [animateStatus, setAnimateStatus] = useState('running')
+  const [animateStatus, setAnimateStatus] = useState(false)
 
   const toggleAnimatingStatus = () => {
-    setAnimateStatus((prev) => (prev === 'running' ? 'stopped' : 'running'))
+    setAnimateStatus((prev) => !prev)
   }
 
   return (
@@ -29,9 +29,9 @@ const SpringSection = () => {
           className="h-8 w-8 rounded-full"
         >
           <AnimatePresence mode="popLayout" initial={false}>
-            {animateStatus === 'running' ? (
+            {!animateStatus ? (
               <motion.span
-                key="start"
+                key="running"
                 variants={playButtonVariants}
                 initial="hidden"
                 animate="visible"
@@ -41,7 +41,7 @@ const SpringSection = () => {
               </motion.span>
             ) : (
               <motion.span
-                key="end"
+                key="stopped"
                 variants={playButtonVariants}
                 initial="hidden"
                 animate="visible"
@@ -53,10 +53,7 @@ const SpringSection = () => {
           </AnimatePresence>
         </Button>
       </header>
-      <SpringComponent
-        animateStatus={animateStatus}
-        setAnimateStatus={setAnimateStatus}
-      />
+      <SpringComponent animateStatus={animateStatus} />
     </section>
   )
 }
