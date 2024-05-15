@@ -65,7 +65,7 @@ const MultipleStateButtonComponent = () => {
 
           setTimeout(() => {
             setButtonState('idle')
-          }, 3500)
+          }, 5000)
         }}
       >
         <AnimatePresence mode="popLayout" initial={false}>
