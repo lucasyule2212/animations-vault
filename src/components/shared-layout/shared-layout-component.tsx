@@ -63,7 +63,7 @@ const SharedLayoutComponent = () => {
   useOnClickOutside(ref, () => setActiveGame(null))
 
   useEffect(() => {
-    function onKeyDown(event) {
+    function onKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape') {
         setActiveGame(null)
       }
@@ -159,7 +159,7 @@ const SharedLayoutComponent = () => {
             key={game.title}
             onClick={() => setActiveGame(game)}
             style={{ borderRadius: 8 }}
-            className="flex w-[368px] cursor-pointer items-center gap-4 p-0"
+            className="flex w-full cursor-pointer items-center gap-4 p-0 sm:w-[368px]"
           >
             <motion.span layoutId={game.image}>
               <Image
