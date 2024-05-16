@@ -1,6 +1,6 @@
 # Animations Vault
 
-A place where I'm displaying some of my latest studies in web animations, trying to develop some animations that make people feel something. Built with Next.js, Framer Motion and Tailwind CSS.
+An interactive design lab where I'm showcasing some of my latest studies in web animations, trying to develop some animations that make people feel something. Built with Next.js, Framer Motion and Tailwind CSS.
 </br>
 
 ## Author
