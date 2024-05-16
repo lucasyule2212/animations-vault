@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Animations Vault
 
-## Getting Started
+A place where I'm displaying some of my latest studies in web animations, trying to develop some animations that make people feel something. Built with Next.js, Framer Motion and Tailwind CSS.
+</br>
 
-First, run the development server:
+## Author
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [@lucasyule2212 - GitHub](https://www.github.com/lucasyule2212)
+- [lucasyulerocha - LinkedIn](https://www.linkedin.com/in/lucasyulerocha/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Inspiration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I'm trying to surround myself with some clean, modern, unique and almost "state of art" UI's. I've got some inspirations in some of the best design engineers and a deep inspiration in the [Animations on the Web](https://animations.dev/) course by [Emil Kowalski](https://twitter.com/emilkowalski_).
+- [Rauno](https://twitter.com/raunofreiberg)
+- [Mariana Castilho](https://twitter.com/mrncst)
+- [Shu](https://twitter.com/shuding_)
+- [Pacocoursey](https://twitter.com/pacocoursey)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Learnings...
+- Web animations best practices and guidelines
+- The meaning behind animations, and how to make them feel right
+- Easing types, how and when to use each one, and custom easing functions
+- Spring animations, how and when to use it
+- UI/UX principles
+- Framer Motion mastery
+- Layout animations
+- Shared layout animations
+</br>
+... still the beggining of the journey
