@@ -1,6 +1,6 @@
-import SharedLayoutComponent from '@/components/shared-layout/shared-layout-component'
+import SharedLayoutComponent from '@/components/shared-layout/apple-store-list'
 
-const SharedLayoutSection = () => {
+const AppleStoreListSection = () => {
   return (
     <section className="mt-24 flex flex-col gap-4 sm:px-16 md:px-20 lg:px-32 xl:px-52">
       <header className="flex items-center  gap-4">
@@ -11,4 +11,4 @@ const SharedLayoutSection = () => {
   )
 }
 
-export default SharedLayoutSection
+export default AppleStoreListSection
