@@ -1,6 +1,6 @@
 'use client'
 import { cva } from 'class-variance-authority'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, Variants } from 'framer-motion'
 import { ShieldAlert, ShieldCheck } from 'lucide-react'
 import { useState } from 'react'
 
@@ -25,7 +25,7 @@ const buttonStates = {
   },
 }
 
-const animationVariants = {
+const animationVariants: Variants = {
   initial: { opacity: 0, y: -25 },
   visible: { opacity: 1, y: 0 },
   exit: { opacity: 0, y: 25 },
@@ -36,7 +36,7 @@ const MultipleStateButtonComponent = () => {
     useState<keyof typeof buttonStates>('idle')
 
   const buttonStyleVariants = cva(
-    'w-[150px] overflow-hidden rounded-2xl bg-zinc-900 shadow-[inset_0px_0.5px_0px_1px_#65656522] drop-shadow-md transition-colors',
+    'w-[150px] overflow-hidden rounded-2xl bg-zinc-900 shadow-[inset_0px_0.5px_0px_1px_#65656522] drop-shadow-md transition-colors disabled:opacity-100',
     {
       variants: {
         variant: {
@@ -65,7 +65,7 @@ const MultipleStateButtonComponent = () => {
 
           setTimeout(() => {
             setButtonState('idle')
-          }, 5000)
+          }, 7000)
         }}
       >
         <AnimatePresence mode="popLayout" initial={false}>
@@ -76,7 +76,7 @@ const MultipleStateButtonComponent = () => {
             initial="initial"
             animate="visible"
             exit="exit"
-            transition={{ type: 'spring', duration: 0.3, bounce: 0 }}
+            transition={{ type: 'spring', duration: 0.2, bounce: 0 }}
           >
             {buttonStates[buttonState].icon}
             {buttonStates[buttonState].text}
