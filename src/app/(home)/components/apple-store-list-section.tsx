@@ -1,4 +1,5 @@
-import SharedLayoutComponent from '@/components/shared-layout/apple-store-list'
+import AppleStoreCardComponent from '@/components/shared-layout/apple-store-card'
+import AppleStoreListComponent from '@/components/shared-layout/apple-store-list'
 
 const AppleStoreListSection = () => {
   return (
@@ -6,7 +7,8 @@ const AppleStoreListSection = () => {
       <header className="flex items-center  gap-4">
         <h2>Apple Store-like list</h2>
       </header>
-      <SharedLayoutComponent />
+      <AppleStoreListComponent />
+      <AppleStoreCardComponent />
     </section>
   )
 }
