@@ -79,7 +79,10 @@ const AppleStoreCardComponent = () => {
                 </motion.div>
               </div>
             </motion.div>
-            <motion.div className="flex w-full flex-col gap-4 bg-white p-4 text-left text-muted-foreground">
+            <motion.div
+              layoutId="card-long-description"
+              className="flex w-full flex-col gap-4 bg-white p-4 text-left text-muted-foreground"
+            >
               <p>
                 <b className="text-background">Are you ready?</b> A game about
                 vikings, where you can play as a viking and fight other vikings.
@@ -148,6 +151,24 @@ const AppleStoreCardComponent = () => {
                 </motion.button>
               </motion.div>
             </div>
+            <motion.div
+              layoutId="card-long-description"
+              className="absolute top-[100%] h-0 opacity-0"
+            >
+              <p>
+                <b className="text-background">Are you ready?</b> A game about
+                vikings, where you can play as a viking and fight other vikings.
+                You can also build your own viking village and explore the
+                world.
+              </p>
+              <p>
+                <b className="text-background">The never ending adventure </b>
+                In this game set in a fairy tale world, players embark on a
+                quest through mystical lands filled with enchanting forests and
+                towering mountains. Players can explore the world, build their
+                own viking
+              </p>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
