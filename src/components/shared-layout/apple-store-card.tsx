@@ -24,7 +24,7 @@ const AppleStoreCardComponent = () => {
   }, [])
 
   return (
-    <Card className="flex w-full min-w-[300px] items-center justify-center p-6">
+    <Card className="relative flex w-full min-w-[300px] items-center justify-center p-6">
       <AnimatePresence>
         {isOpen ? (
           <div className="flex w-[320px] flex-col items-center">
@@ -96,6 +96,9 @@ const AppleStoreCardComponent = () => {
         ) : (
           <motion.div
             layoutId="card-container"
+            whileTap={{
+              scale: 0.98,
+            }}
             className="relative my-12 flex h-[370px] w-[320px] cursor-pointer flex-col items-center"
             onClick={() => setIsOpen(true)}
           >
