@@ -27,11 +27,11 @@ const AppleStoreCardComponent = () => {
     <Card className="relative flex w-full min-w-[300px] items-center justify-center p-6">
       <AnimatePresence>
         {isOpen ? (
-          <div className="flex w-[320px] flex-col items-center">
+          <div className="flex w-[360px] flex-col items-center">
             <motion.div
               ref={ref}
               layoutId="card-container"
-              className="relative flex h-[370px] w-full cursor-pointer flex-col items-center"
+              className="relative flex h-[420px] w-full cursor-pointer flex-col items-center"
             >
               <motion.span
                 layoutId="card-image"
@@ -47,13 +47,15 @@ const AppleStoreCardComponent = () => {
               </motion.span>
 
               <div className="absolute bottom-0 left-0 z-10 w-full">
-                <motion.p
-                  layoutId="card-title"
-                  className="text-balance p-3 text-[40px] font-extrabold leading-10 tracking-wide"
-                >
-                  GAME <br /> OF THE <br />
-                  DAY
-                </motion.p>
+                <div className="p-3">
+                  <motion.p
+                    layoutId="card-title"
+                    className="max-w-[160px] text-left text-[40px] font-extrabold leading-10 tracking-wide"
+                  >
+                    GAME <br /> OF THE <br />
+                    DAY
+                  </motion.p>
+                </div>
                 <motion.div
                   layoutId="card-footer"
                   className="flex w-full items-center bg-black/20 p-3 backdrop-blur-[3px]"
@@ -99,7 +101,7 @@ const AppleStoreCardComponent = () => {
             whileTap={{
               scale: 0.98,
             }}
-            className="relative my-12 flex h-[370px] w-[320px] cursor-pointer flex-col items-center"
+            className="relative my-12 flex h-[370px] w-[320px] cursor-pointer select-none flex-col items-center overflow-hidden"
             onClick={() => setIsOpen(true)}
           >
             <motion.span
@@ -116,13 +118,15 @@ const AppleStoreCardComponent = () => {
             </motion.span>
 
             <div className="absolute bottom-0 left-0 z-10 w-full">
-              <motion.p
-                layoutId="card-title"
-                className="text-balance p-3 text-[40px] font-extrabold leading-10 tracking-wide"
-              >
-                GAME <br /> OF THE <br />
-                DAY
-              </motion.p>
+              <div className="p-3">
+                <motion.p
+                  layoutId="card-title"
+                  className="max-w-[160px] text-left text-[40px] font-extrabold leading-10 tracking-wide"
+                >
+                  GAME <br /> OF THE <br />
+                  DAY
+                </motion.p>
+              </div>
               <motion.div
                 layoutId="card-footer"
                 className="flex w-full items-center bg-black/20 p-3 backdrop-blur-[3px]"
