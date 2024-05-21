@@ -27,11 +27,11 @@ const AppleStoreCardComponent = () => {
     <Card className="relative flex w-full min-w-[300px] items-center justify-center p-6">
       <AnimatePresence>
         {isOpen ? (
-          <div className="flex w-[360px] flex-col items-center">
+          <div className="flex h-full w-[360px] flex-col items-center">
             <motion.div
               ref={ref}
               layoutId="card-container"
-              className="relative flex h-[420px] w-full cursor-pointer flex-col items-center"
+              className="relative flex h-[430px] w-full cursor-pointer flex-col items-center"
             >
               <motion.span
                 layoutId="card-image"
@@ -57,23 +57,33 @@ const AppleStoreCardComponent = () => {
                   </motion.p>
                 </div>
                 <motion.div
-                  layoutId="card-footer"
+                  layoutId="card-footer-container"
                   className="flex w-full items-center bg-black/20 p-3 backdrop-blur-[3px]"
                 >
-                  <Image
-                    height={1000}
-                    width={1000}
-                    alt="Game"
-                    src="https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/app-store-like-cards/game-logo.webp"
-                    className="h-10 w-10 rounded-md"
-                  />
+                  <motion.span layoutId="card-footer-image">
+                    <Image
+                      height={1000}
+                      width={1000}
+                      alt="Game"
+                      src="https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/app-store-like-cards/game-logo.webp"
+                      className="h-10 w-10 rounded-md"
+                    />
+                  </motion.span>
                   <div className="ml-2">
-                    <p className="text-xs">Vikings</p>
-                    <p className="text-xs text-zinc-300">
+                    <motion.p layoutId="card-footer-title" className="text-xs">
+                      Vikings
+                    </motion.p>
+                    <motion.p
+                      layoutId="card-footer-subtitle"
+                      className="text-xs text-zinc-300"
+                    >
                       A game about vikings
-                    </p>
+                    </motion.p>
                   </div>
-                  <motion.button className="ml-auto rounded-full bg-zinc-400/40 px-5 py-2 text-xs font-semibold backdrop-blur-sm">
+                  <motion.button
+                    layoutId="card-footer-button"
+                    className="ml-auto rounded-full bg-zinc-400/40 px-5 py-2 text-xs font-semibold backdrop-blur-sm"
+                  >
                     Get
                   </motion.button>
                 </motion.div>
@@ -82,6 +92,9 @@ const AppleStoreCardComponent = () => {
             <motion.div
               layoutId="card-long-description"
               className="flex w-full flex-col gap-4 bg-white p-4 text-left text-muted-foreground"
+              // initial={{ opacity: 0 }}
+              // animate={{ opacity: 1 }}
+              // exit={{ opacity: 0 }}
             >
               <p>
                 <b className="text-background">Are you ready?</b> A game about
@@ -94,7 +107,7 @@ const AppleStoreCardComponent = () => {
                 In this game set in a fairy tale world, players embark on a
                 quest through mystical lands filled with enchanting forests and
                 towering mountains. Players can explore the world, build their
-                own viking
+                own viking.
               </p>
             </motion.div>
           </div>
@@ -131,29 +144,45 @@ const AppleStoreCardComponent = () => {
                 </motion.p>
               </div>
               <motion.div
-                layoutId="card-footer"
+                layoutId="card-footer-container"
                 className="flex w-full items-center bg-black/20 p-3 backdrop-blur-[3px]"
               >
-                <Image
-                  height={1000}
-                  width={1000}
-                  alt="Game"
-                  src="https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/app-store-like-cards/game-logo.webp"
-                  className="h-10 w-10 rounded-md"
-                />
+                <motion.span layoutId="card-footer-image">
+                  <Image
+                    height={1000}
+                    width={1000}
+                    alt="Game"
+                    src="https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/app-store-like-cards/game-logo.webp"
+                    className="h-10 w-10 rounded-md"
+                  />
+                </motion.span>
                 <div className="ml-2">
-                  <p className="text-xs">Vikings</p>
-                  <p className="text-xs text-zinc-300">A game about vikings</p>
+                  <motion.p layoutId="card-footer-title" className="text-xs">
+                    Vikings
+                  </motion.p>
+                  <motion.p
+                    layoutId="card-footer-subtitle"
+                    className="text-xs text-zinc-300"
+                  >
+                    A game about vikings
+                  </motion.p>
                 </div>
 
-                <motion.button className="ml-auto rounded-full bg-zinc-400/40 px-5 py-2 text-xs font-semibold backdrop-blur-sm">
+                <motion.button
+                  layoutId="card-footer-button"
+                  className="ml-auto rounded-full bg-zinc-400/40 px-5 py-2 text-xs font-semibold backdrop-blur-sm"
+                >
                   Get
                 </motion.button>
               </motion.div>
             </div>
             <motion.div
               layoutId="card-long-description"
-              className="absolute top-[100%] h-0 opacity-0"
+              style={{
+                opacity: 0,
+                position: 'absolute',
+                top: '100%',
+              }}
             >
               <p>
                 <b className="text-background">Are you ready?</b> A game about
@@ -166,7 +195,7 @@ const AppleStoreCardComponent = () => {
                 In this game set in a fairy tale world, players embark on a
                 quest through mystical lands filled with enchanting forests and
                 towering mountains. Players can explore the world, build their
-                own viking
+                own viking.
               </p>
             </motion.div>
           </motion.div>
