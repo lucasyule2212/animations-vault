@@ -92,9 +92,16 @@ const AppleStoreCardComponent = () => {
             <motion.div
               layoutId="card-long-description"
               className="flex w-full flex-col gap-4 bg-white p-4 text-left text-muted-foreground"
-              // initial={{ opacity: 0 }}
-              // animate={{ opacity: 1 }}
-              // exit={{ opacity: 0 }}
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+              exit={{
+                opacity: 0,
+                transition: { duration: 0.05 },
+              }}
             >
               <p>
                 <b className="text-background">Are you ready?</b> A game about
