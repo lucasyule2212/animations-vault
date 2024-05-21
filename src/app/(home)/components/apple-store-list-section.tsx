@@ -1,4 +1,3 @@
-import AppleStoreCardComponent from '@/components/shared-layout/apple-store-card'
 import AppleStoreListComponent from '@/components/shared-layout/apple-store-list'
 
 const AppleStoreListSection = () => {
@@ -8,7 +7,6 @@ const AppleStoreListSection = () => {
         <h2>Apple Store-like list</h2>
       </header>
       <AppleStoreListComponent />
-      <AppleStoreCardComponent />
     </section>
   )
 }
