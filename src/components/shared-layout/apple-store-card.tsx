@@ -31,7 +31,7 @@ const AppleStoreCardComponent = () => {
             <motion.div
               ref={ref}
               layoutId="card-container"
-              className="absolute left-[25%] top-0 my-auto flex h-full w-[360px] select-none flex-col overflow-hidden bg-white"
+              className="absolute left-[5%] top-0 my-auto flex h-full w-[360px] select-none flex-col overflow-hidden bg-white sm:left-[10%] md:left-[15%] xl:left-[25%]"
             >
               <div className="relative flex h-[430px] w-[360px] flex-col items-center">
                 <motion.span
