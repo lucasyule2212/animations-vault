@@ -13,12 +13,17 @@ const FeedbackPopoverComponent = () => {
 
   const ref = useRef(null)
 
-  useOnClickOutside(ref, () => setIsOpen(false))
+  function resetStates() {
+    setIsOpen(false)
+    setFeedback('')
+  }
+
+  useOnClickOutside(ref, () => resetStates())
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape') {
-        setIsOpen(false)
+        resetStates()
       }
     }
 
@@ -45,14 +50,13 @@ const FeedbackPopoverComponent = () => {
             layoutId="feedback-root-container"
           >
             <motion.div className="relative flex h-full w-full flex-col rounded-sm bg-white px-1 py-1">
-              {feedback === '' && (
-                <motion.p
-                  layoutId="feedback-root-text"
-                  className="absolute left-4 top-3 text-sm text-zinc-600"
-                >
-                  Feedback
-                </motion.p>
-              )}
+              <motion.p
+                layoutId="feedback-root-text"
+                data-hasfeedback={!!feedback}
+                className="absolute left-4 top-3 text-sm text-zinc-600 data-[hasfeedback=true]:text-opacity-0"
+              >
+                Feedback
+              </motion.p>
               <Textarea
                 className="h-full w-full border-none bg-white outline-none ring-0 ring-offset-0 focus:border-none focus:outline-none focus:ring-0"
                 value={feedback}
