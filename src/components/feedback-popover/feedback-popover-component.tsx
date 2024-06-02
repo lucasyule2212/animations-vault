@@ -49,7 +49,7 @@ const FeedbackPopoverComponent = () => {
             className="absolute h-[192px] w-[364px] rounded-sm border border-zinc-300 bg-zinc-100 p-[6px] text-accent drop-shadow-sm"
             layoutId="feedback-root-container"
           >
-            <motion.div className="relative flex h-full w-full flex-col rounded-sm bg-white px-1 py-1">
+            <motion.div className="relative flex h-full w-full flex-col rounded-sm border border-zinc-300 bg-white px-1 py-1">
               <motion.p
                 layoutId="feedback-root-text"
                 data-hasfeedback={!!feedback}
@@ -63,6 +63,19 @@ const FeedbackPopoverComponent = () => {
                 onChange={(e) => setFeedback(e.target.value)}
                 autoFocus
               />
+              <div className="absolute -left-1 bottom-11 z-10 h-2 w-2 rounded-r-full border border-zinc-300 bg-zinc-100" />
+              <div className="absolute -left-[4.5px] bottom-11 z-20 h-2 w-1  bg-zinc-100" />
+              <div className="absolute bottom-12 left-0 w-full border-t border-dashed border-zinc-300" />
+              <div className="absolute -right-1 bottom-11 z-10 h-2 w-2 rounded-l-full border border-zinc-300 bg-zinc-100" />
+              <div className="absolute -right-[4.5px] bottom-11 z-20 h-2 w-1  bg-zinc-100" />
+              <div className="flex h-10 w-full items-center justify-end">
+                <Button
+                  className="border-none bg-white text-accent"
+                  onClick={() => resetStates()}
+                >
+                  Submit
+                </Button>
+              </div>
             </motion.div>
           </motion.div>
         )}
