@@ -6,10 +6,14 @@ import { useOnClickOutside } from 'usehooks-ts'
 import { Button } from '../ui/button'
 import { Card } from '../ui/card'
 import { Textarea } from '../ui/textarea'
+import SubmissionButton from './submission-button'
 
 const FeedbackPopoverComponent = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [feedback, setFeedback] = useState('')
+  const [submissionState, setSubmissionState] = useState<
+    'idle' | 'pending' | 'success'
+  >('idle')
 
   const ref = useRef(null)
 
@@ -30,6 +34,19 @@ const FeedbackPopoverComponent = () => {
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [])
+
+  const handleSubmit = async () => {
+    setSubmissionState('pending')
+
+    setTimeout(() => {
+      setSubmissionState('success')
+    }, 3000)
+
+    setTimeout(() => {
+      setSubmissionState('idle')
+      resetStates()
+    }, 5000)
+  }
 
   return (
     <Card className="relative flex min-h-[300px] w-full min-w-[300px] items-center justify-center bg-white p-6">
@@ -69,17 +86,10 @@ const FeedbackPopoverComponent = () => {
               <div className="absolute -right-1 bottom-11 z-10 h-2 w-2 rounded-l-full border border-zinc-300 bg-zinc-100" />
               <div className="absolute -right-[4.5px] bottom-11 z-20 h-2 w-1  bg-zinc-100" />
               <div className="flex h-10 w-full items-center justify-end px-2 py-2">
-                <Button
-                  className="border-b-1 border-l-1 border-r-1 relative inline-flex h-6 overflow-hidden rounded-lg border-blue-500 bg-gradient-to-b from-[#157cff] to-[#1994ff] px-2 py-1 text-xs text-white"
-                  onClick={() => resetStates()}
-                  size="sm"
-                  style={{
-                    boxShadow:
-                      '0px 0px 1px 1px rgba(255, 255, 255, 0.08) inset, 0px 1px 1.5px 0px rgba(0, 0, 0, 0.32), 0px 0px 0px 0.5px #1a94ff',
-                  }}
-                >
-                  <span className="drop-shadow-sm">Send Feedback</span>
-                </Button>
+                <SubmissionButton
+                  submissionState={submissionState}
+                  handleSubmit={handleSubmit}
+                />
               </div>
             </motion.div>
           </motion.div>
