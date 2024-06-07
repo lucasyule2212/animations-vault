@@ -71,14 +71,17 @@ const MultiStepComponent = () => {
   const variants = {
     initial: (custom: number) => ({
       x: `${100 * custom}%`,
+      filter: 'blur(3px)',
       opacity: 0,
     }),
     animate: () => ({
       x: 0,
+      filter: 'blur(0)',
       opacity: 1,
     }),
     exit: (custom: number) => ({
       x: `${-100 * custom}%`,
+      filter: 'blur(3px)',
       opacity: 0,
     }),
   }
