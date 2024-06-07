@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client'
-import { motion, MotionConfig } from 'framer-motion'
+import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
 import { useMemo, useRef, useState } from 'react'
 
 import useMeasure from '@/hooks/use-measure'
@@ -13,6 +13,7 @@ const MultiStepComponent = () => {
   const [currentStep, setCurrentStep] = useState<number>(0)
   const ref = useRef(null)
   const { height } = useMeasure({ ref })
+  const [clickDirection, setClickDirection] = useState(1)
 
   const steps = useMemo(() => {
     switch (currentStep) {
@@ -67,6 +68,21 @@ const MultiStepComponent = () => {
     }
   }, [currentStep])
 
+  const variants = {
+    initial: (custom: number) => ({
+      x: `${100 * custom}%`,
+      opacity: 0,
+    }),
+    animate: () => ({
+      x: 0,
+      opacity: 1,
+    }),
+    exit: (custom: number) => ({
+      x: `${-100 * custom}%`,
+      opacity: 0,
+    }),
+  }
+
   return (
     <Card className="flex min-h-[500px] w-full min-w-[300px] items-center justify-center p-6 text-black">
       <MotionConfig transition={{ type: 'spring', bounce: 0, duration: 0.5 }}>
@@ -74,8 +90,23 @@ const MultiStepComponent = () => {
           animate={{ height }}
           className="relative mx-auto w-[550px] overflow-hidden rounded-lg bg-white shadow-sm"
         >
-          <div ref={ref} className="p-6">
-            <div>{steps}</div>
+          <div ref={ref} className="h-fit p-6">
+            <AnimatePresence
+              mode="popLayout"
+              initial={false}
+              custom={clickDirection}
+            >
+              <motion.div
+                key={currentStep}
+                variants={variants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                custom={clickDirection}
+              >
+                {steps}
+              </motion.div>
+            </AnimatePresence>
             <motion.div layout className="mt-8 flex justify-between">
               <Button
                 className="h-8 w-fit rounded-full px-4 text-sm font-medium text-zinc-700 shadow-sm"
@@ -85,6 +116,7 @@ const MultiStepComponent = () => {
                     return
                   }
                   setCurrentStep((prev) => prev - 1)
+                  setClickDirection(-1)
                 }}
               >
                 Back
@@ -98,6 +130,7 @@ const MultiStepComponent = () => {
                     return
                   }
                   setCurrentStep((prev) => prev + 1)
+                  setClickDirection(1)
                 }}
               >
                 Continue
