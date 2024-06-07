@@ -63,7 +63,6 @@ const FeedbackPopoverComponent = () => {
       <AnimatePresence initial={false} mode="popLayout">
         {isOpen && (
           <motion.div
-            ref={ref}
             className="absolute h-[192px] w-[364px] overflow-hidden rounded-xl border border-zinc-300 bg-zinc-100 p-[6px] text-accent drop-shadow-sm"
             layoutId="feedback-root-container"
           >
@@ -107,6 +106,7 @@ const FeedbackPopoverComponent = () => {
               </motion.div>
             ) : (
               <motion.div
+                ref={ref}
                 key="feedback-root-text"
                 exit={{ y: 8, opacity: 0, filter: 'blur(4px)' }}
                 transition={{ type: 'spring', duration: 0.2, bounce: 0 }}
