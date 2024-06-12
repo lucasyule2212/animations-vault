@@ -4,7 +4,11 @@ import { ArrowLeft, FileWarning, Trash2 } from 'lucide-react'
 
 import { Button } from '../ui/button'
 
-const Toolbar = () => {
+interface ToolbarProps {
+  onDelete: () => void
+}
+
+const Toolbar = ({ onDelete }: ToolbarProps) => {
   return (
     <motion.div
       initial={{
@@ -34,7 +38,10 @@ const Toolbar = () => {
         <ArrowLeft className="h-4 w-4 flex-shrink-0" />
         Back
       </Button>
-      <Button className="flex w-12 flex-col items-center rounded-lg bg-[#F9F9F8] pb-1 pt-[6px] text-[10px] font-medium text-[#8D8D86] transition-colors hover:bg-red-50 hover:text-red-500">
+      <Button
+        className="flex w-12 flex-col items-center rounded-lg bg-[#F9F9F8] pb-1 pt-[6px] text-[10px] font-medium text-[#8D8D86] transition-colors hover:bg-red-50 hover:text-red-500"
+        onClick={onDelete}
+      >
         <Trash2 className="h-4 w-4 flex-shrink-0" />
         Trash
       </Button>

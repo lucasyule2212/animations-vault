@@ -1,4 +1,5 @@
 'use client'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -18,7 +19,14 @@ const ImageCheckbox = ({ image, onClick }: ImageCheckboxProps) => {
   }
 
   return (
-    <div className="cursor-pointer" onClick={handleOnClick}>
+    <motion.div
+      layoutId={image}
+      exit={{
+        filter: 'blur(4px)',
+      }}
+      className="cursor-pointer"
+      onClick={handleOnClick}
+    >
       <Checkbox
         checked={checked}
         onChange={() => handleOnClick()}
@@ -31,7 +39,7 @@ const ImageCheckbox = ({ image, onClick }: ImageCheckboxProps) => {
         alt={image}
         className="h-24 w-24 rounded-xl"
       />
-    </div>
+    </motion.div>
   )
 }
 
