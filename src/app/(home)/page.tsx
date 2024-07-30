@@ -13,15 +13,17 @@ export default function Home() {
   return (
     <main className="flex w-screen flex-col rounded-md px-2 py-10 text-base text-accent-foreground sm:px-16 md:px-20 lg:px-32 lg:py-32 xl:px-52">
       <HeaderSection />
-      <TrashInteractionSection />
-      <MultiStepComponentSection />
-      <FeedbackPopoverSection />
-      <AppleStoreCardSection />
-      <AppleStoreListSection />
-      <MultipleStateButtonSection />
-      <AnimatedTabsSection />
-      <SpringSection />
-      <EaseSection />
+      <div className="animate-orchestration delay-500">
+        <TrashInteractionSection />
+        <MultiStepComponentSection />
+        <FeedbackPopoverSection />
+        <AppleStoreCardSection />
+        <AppleStoreListSection />
+        <MultipleStateButtonSection />
+        <AnimatedTabsSection />
+        <SpringSection />
+        <EaseSection />
+      </div>
     </main>
   )
 }

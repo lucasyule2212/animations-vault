@@ -97,10 +97,19 @@ const config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        orchestration: {
+          from: {
+            opacity: '0',
+            transform: 'translateY(-20px)',
+            filter: 'blur(4px)',
+          },
+          to: { opacity: '1', transform: 'translateY(0)', filter: 'blur(0px)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        orchestration: 'orchestration 0.5s ease-out 120ms both',
       },
     },
   },
