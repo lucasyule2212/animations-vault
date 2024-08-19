@@ -19,6 +19,7 @@ const config = {
     },
     extend: {
       fontFamily: {
+        openRunde: ['var(--font-open-runde)'],
         sans: ['var(--font-geist-sans)'],
         serif: ['var(--font-newsreader)'],
       },
