@@ -1,6 +1,7 @@
 'use client'
 
 import { Lock, LucideProps, NotepadText, TriangleAlert, X } from 'lucide-react'
+import { ReactNode } from 'react'
 import { Drawer } from 'vaul'
 
 import { cn } from '@/lib/utils'
@@ -76,6 +77,70 @@ const OptionsButton = ({
       />
       {title}
     </Button>
+  )
+}
+
+export function Header({
+  icon,
+  title,
+  description,
+}: {
+  icon: ReactNode
+  title: string
+  description: string
+}) {
+  return (
+    <header className="mt-[21px]">
+      {icon}
+      <h2 className="mt-2.5 text-[22px] font-semibold text-[#222222] md:font-medium">
+        {title}
+      </h2>
+
+      <p className="mt-3 text-[17px] font-medium leading-[24px] text-[#999999] md:font-normal">
+        {description}
+      </p>
+    </header>
+  )
+}
+
+export function MainButton({
+  children,
+  onClick,
+}: {
+  children: ReactNode
+  onClick: () => void
+}) {
+  return (
+    <button
+      data-vaul-no-drag=""
+      className=" focus-visible:shadow-focus-ring-button flex h-12 w-full items-center gap-[15px] rounded-[16px] bg-[#F7F8F9] px-4 text-[17px] font-semibold text-[#222222] transition-transform focus:scale-95 active:scale-95 md:font-medium"
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  )
+}
+
+export function SecondaryButton({
+  children,
+  onClick,
+  className,
+}: {
+  children: ReactNode
+  onClick: () => void
+  className: string
+}) {
+  return (
+    <button
+      data-vaul-no-drag=""
+      className={cn(
+        'focus-visible:shadow-focus-ring-button flex h-12 w-full items-center justify-center gap-[15px] rounded-full text-center text-[19px] font-semibold transition-transform focus:scale-95 active:scale-95 md:font-medium',
+        className,
+      )}
+      onClick={onClick}
+    >
+      {children}
+    </button>
   )
 }
 
