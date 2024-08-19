@@ -1,4 +1,10 @@
-import { Ban, RectangleEllipsis, ScanFace, ShieldCheck, VenetianMask } from 'lucide-react'
+import {
+  Ban,
+  RectangleEllipsis,
+  ScanFace,
+  ShieldCheck,
+  VenetianMask,
+} from 'lucide-react'
 
 import { Header, SecondaryButton } from './default-view'
 
