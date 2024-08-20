@@ -69,12 +69,13 @@ const FamilyDrawerComponent = () => {
                 <AnimatePresence initial={false} mode="popLayout" custom={view}>
                   <Drawer.Handle className="mb-4 bg-zinc-200" />
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.96 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.96 }}
+                    initial={{ opacity: 0, scale: 0.96, filter: 'blur(2px)' }}
+                    animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0)' }}
+                    exit={{ opacity: 0, scale: 0.96, filter: 'blur(2px)' }}
                     key={view}
                     transition={{
-                      duration: 0.2,
+                      duration: 0.27,
+                      ease: [0.26, 0.08, 0.25, 1],
                     }}
                   >
                     {content}
