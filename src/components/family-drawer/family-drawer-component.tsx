@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Settings } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import useMeasure from 'react-use-measure'
@@ -53,7 +53,7 @@ const FamilyDrawerComponent = () => {
           />
           <Drawer.Content
             asChild
-            className="fixed inset-x-4 bottom-4 z-10 mx-auto w-[340px] overflow-hidden rounded-[36px] bg-[#FEFFFE] font-openRunde text-black outline-none md:mx-auto"
+            className="fixed inset-x-4 bottom-4 z-10 mx-auto w-[340px] overflow-hidden rounded-[36px] bg-[#FEFFFE] font-openRunde text-black outline-none md:mx-auto "
           >
             <motion.div
               animate={{
@@ -65,9 +65,22 @@ const FamilyDrawerComponent = () => {
                 duration: 0.3,
               }}
             >
-              <div className="px-6 pb-6 pt-2" ref={elementRef}>
-                <Drawer.Handle className="mb-4 bg-zinc-200" />
-                {content}
+              <div className="px-6 pb-6 pt-2 antialiased" ref={elementRef}>
+                <AnimatePresence initial={false} mode="popLayout" custom={view}>
+                  <Drawer.Handle className="mb-4 bg-zinc-200" />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.96, filter: 'blur(2px)' }}
+                    animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0)' }}
+                    exit={{ opacity: 0, scale: 0.96, filter: 'blur(2px)' }}
+                    key={view}
+                    transition={{
+                      duration: 0.27,
+                      ease: [0.26, 0.08, 0.25, 1],
+                    }}
+                  >
+                    {content}
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </motion.div>
           </Drawer.Content>
