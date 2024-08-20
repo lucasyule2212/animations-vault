@@ -65,15 +65,15 @@ const OptionsButton = ({
   return (
     <Button
       className={cn(
-        'h-12 w-full items-center justify-start gap-2 rounded-xl bg-zinc-100 text-[17px] text-base font-semibold text-zinc-600 transition-all duration-150 hover:bg-zinc-200 focus:scale-95 active:scale-95',
-        isDestructive && 'bg-red-100 text-red-400 hover:bg-red-200',
+        'h-12 w-full items-center justify-start gap-2 rounded-xl bg-zinc-100 text-[17px] text-base font-semibold text-zinc-800 transition-all duration-150 hover:bg-zinc-200 focus:scale-95 active:scale-95',
+        isDestructive && 'bg-red-100 text-red-500 hover:bg-red-200',
       )}
       onClick={() => setView(view)}
     >
       <Icon
         data-isdestructive={isDestructive}
         absoluteStrokeWidth
-        className="h-5 w-5 text-zinc-400 data-[isdestructive=true]:text-red-400"
+        className="h-5 w-5 text-zinc-400 data-[isdestructive=true]:text-red-500"
       />
       {title}
     </Button>
