@@ -1,4 +1,6 @@
 'use client'
+import './styles.css'
+
 import { AnimatePresence, motion } from 'framer-motion'
 import { Settings } from 'lucide-react'
 import { useMemo, useState } from 'react'
