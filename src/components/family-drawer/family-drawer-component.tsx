@@ -60,9 +60,10 @@ const FamilyDrawerComponent = () => {
                 height: bounds.height,
               }}
               transition={{
-                type: 'spring',
+                type: 'tween',
+                ease: [0.26, 1, 0.5, 1],
                 bounce: 0,
-                duration: 0.3,
+                duration: 0.27,
               }}
             >
               <div className="px-6 pb-6 pt-2 antialiased" ref={elementRef}>
