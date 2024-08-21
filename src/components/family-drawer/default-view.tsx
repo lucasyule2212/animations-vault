@@ -15,30 +15,30 @@ const DefaultView = ({
 }) => {
   return (
     <div>
-      <div className="flex items-center justify-between border-b border-b-zinc-100 pb-4">
-        <p className="font-medium">Options</p>
-        <Drawer.Close className="h-fit w-fit rounded-full bg-zinc-100 p-1">
+      <div className="flex items-center justify-between border-b border-b-zinc-50 pb-5">
+        <p className="text-lg font-medium text-[#222222] ">Options</p>
+        <Drawer.Close className="h-fit w-fit rounded-full bg-zinc-100 p-2">
           <X
-            className="h-4 w-4 stroke-[3px] text-zinc-400"
+            className="h-4 w-4 stroke-[4px] text-zinc-400"
             absoluteStrokeWidth
           />
         </Drawer.Close>
       </div>
-      <div className="mt-4 flex flex-col items-start gap-2">
+      <div className="mt-4 flex flex-col items-start gap-3">
         <OptionsButton
-          title="View private key"
+          title="View Private Key"
           view="key"
           setView={setView}
           icon={Lock}
         />
         <OptionsButton
-          title="View recovery phrase"
+          title="View Recovery Phrase"
           view="phrase"
           setView={setView}
           icon={NotepadText}
         />
         <OptionsButton
-          title="Remove wallet"
+          title="Remove Wallet"
           view="remove"
           setView={setView}
           icon={TriangleAlert}
@@ -65,8 +65,8 @@ const OptionsButton = ({
   return (
     <Button
       className={cn(
-        'h-12 w-full items-center justify-start gap-2 rounded-xl bg-zinc-100 text-[17px] text-base font-semibold text-zinc-800 transition-all duration-150 hover:bg-zinc-200 focus:scale-95 active:scale-95',
-        isDestructive && 'bg-red-100 text-red-500 hover:bg-red-200',
+        'h-12 w-full items-center justify-start gap-3 rounded-2xl bg-zinc-50 text-[17px] font-medium text-zinc-800 transition-all duration-150 hover:bg-zinc-100 focus:scale-95 active:scale-95',
+        isDestructive && 'bg-red-50 text-red-500 hover:bg-red-100',
       )}
       onClick={() => setView(view)}
     >
@@ -91,7 +91,15 @@ export function Header({
 }) {
   return (
     <header className="mt-[21px]">
-      {icon}
+      <div className="flex items-start justify-between">
+        {icon}
+        <Drawer.Close className="h-fit w-fit rounded-full bg-zinc-100 p-2">
+          <X
+            className="h-4 w-4 stroke-[4px] text-zinc-400"
+            absoluteStrokeWidth
+          />
+        </Drawer.Close>
+      </div>
       <h2 className="mt-2.5 text-[22px] font-semibold text-[#222222] md:font-medium">
         {title}
       </h2>

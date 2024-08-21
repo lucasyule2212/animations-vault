@@ -17,7 +17,7 @@ const PhraseView = ({
     <div>
       <div className="px-2">
         <Header
-          icon={<VenetianMask />}
+          icon={<VenetianMask className="h-10 w-10 text-zinc-400" />}
           title="Secret Recovery Phrase"
           description="Your Secret Recovery Phrase is the key used to back up your wallet. Keep it secret at all times."
         />

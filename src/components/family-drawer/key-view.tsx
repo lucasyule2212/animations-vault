@@ -17,7 +17,7 @@ const KeyView = ({
     <div>
       <div className="px-2">
         <Header
-          icon={<FileKey2 />}
+          icon={<FileKey2 className="h-10 w-10 text-zinc-400" />}
           title="Private Key"
           description="Your Private Key is the key used to back up your wallet. Keep it
 			  secret and secure at all times."
