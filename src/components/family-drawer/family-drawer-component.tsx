@@ -1,4 +1,6 @@
 'use client'
+import './styles.css'
+
 import { AnimatePresence, motion } from 'framer-motion'
 import { Settings } from 'lucide-react'
 import { useMemo, useState } from 'react'
@@ -37,7 +39,7 @@ const FamilyDrawerComponent = () => {
   }, [setView, view])
 
   return (
-    <Card className="relative flex min-h-[500px] w-full min-w-[300px] items-center justify-center bg-white p-6 font-openRunde">
+    <Card className="relative flex min-h-[530px] w-full min-w-[350px] items-center justify-center bg-white p-6 font-openRunde">
       <Button
         className="group absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-zinc-200 font-semibold text-zinc-600 shadow-sm hover:bg-zinc-100"
         onClick={() => setIsOpen(true)}
@@ -53,16 +55,17 @@ const FamilyDrawerComponent = () => {
           />
           <Drawer.Content
             asChild
-            className="fixed inset-x-4 bottom-4 z-10 mx-auto w-[340px] overflow-hidden rounded-[36px] bg-[#FEFFFE] font-openRunde text-black outline-none md:mx-auto "
+            className="fixed inset-x-4 bottom-4 z-10 mx-auto w-[360px] overflow-hidden rounded-[36px] bg-white font-openRunde text-black outline-none md:mx-auto "
           >
             <motion.div
               animate={{
                 height: bounds.height,
               }}
               transition={{
-                type: 'spring',
+                type: 'tween',
+                ease: [0.26, 1, 0.5, 1],
                 bounce: 0,
-                duration: 0.3,
+                duration: 0.27,
               }}
             >
               <div className="px-6 pb-6 pt-2 antialiased" ref={elementRef}>

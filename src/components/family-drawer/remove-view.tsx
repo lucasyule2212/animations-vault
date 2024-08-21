@@ -11,7 +11,7 @@ const RemoveView = ({
     <div>
       <div className="px-2">
         <Header
-          icon={<TriangleAlert />}
+          icon={<TriangleAlert className="h-10 w-10 text-red-500" />}
           title="Are you sure?"
           description="You haven’t backed up your wallet yet. If you remove it, you could lose access forever. We suggest tapping and backing up your wallet first with a valid recovery method."
         />
