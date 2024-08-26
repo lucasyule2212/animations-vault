@@ -106,11 +106,16 @@ const config = {
           },
           to: { opacity: '1', transform: 'translateY(0)', filter: 'blur(0px)' },
         },
+        'scale-animate': {
+          '0%': { transform: 'scale(0.95)' },
+          '100%': { transform: 'scale(1)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         orchestration: 'orchestration 0.5s ease-out 120ms both',
+        'scale-animate': 'scale-animate 0.25s ease-out',
       },
     },
   },
