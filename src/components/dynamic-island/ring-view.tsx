@@ -73,8 +73,11 @@ const RingView = () => {
           {/* Bell Clapper */}
           <motion.div
             className="absolute left-[7px] top-[12px] h-[6px] w-[6px] rounded-full bg-white"
+            initial={false}
             animate={{
-              translateX: isSilent ? [0, -6, 6, -2, 2, 0] : [0, -5, 5, -2, 0],
+              translateX: isSilent
+                ? [0, -5, 5, -2, 1, 0]
+                : [0, -4, 4, -2, 1, 0],
             }}
           />
           <CustomBell className="absolute top-0 h-5 w-5 fill-white" />
