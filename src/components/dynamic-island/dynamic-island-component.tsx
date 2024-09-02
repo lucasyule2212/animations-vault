@@ -30,7 +30,7 @@ const DynamicIslandComponent = () => {
     <Card className="relative flex min-h-[530px] w-full min-w-[350px] flex-col items-center justify-center gap-12 bg-white p-6">
       <motion.div
         layout
-        className="h-fit min-w-[130px] overflow-hidden bg-black p-2"
+        className="min-w-[130px] overflow-hidden rounded-full bg-black p-2"
         style={{
           borderRadius: 32,
         }}
@@ -38,7 +38,7 @@ const DynamicIslandComponent = () => {
         {content}
       </motion.div>
 
-      <div className="flex justify-evenly gap-4">
+      <motion.div layout className="flex justify-evenly gap-4">
         <Button
           className="h-8 w-32 rounded-full border border-zinc-200 font-semibold text-zinc-600 shadow-sm transition-transform hover:bg-zinc-100 focus:animate-scale-animate"
           onClick={() => setView('idle')}
@@ -57,7 +57,7 @@ const DynamicIslandComponent = () => {
         >
           Timer
         </Button>
-      </div>
+      </motion.div>
     </Card>
   )
 }
