@@ -19,7 +19,7 @@ const DynamicIslandComponent = () => {
         return <RingView />
 
       case 'timer':
-        return <TimerView />
+        return <TimerView setMode={setView} />
 
       default:
         break
