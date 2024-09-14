@@ -12,32 +12,8 @@ const TimerView = ({ setMode }: TimerViewProps) => {
   const [isPaused, setIsPaused] = useState(false)
 
   return (
-    <motion.div
-      className="relative flex h-fit items-center justify-between px-1 py-1"
-      initial={{
-        opacity: 0,
-        filter: 'blur(4px)',
-      }}
-      animate={{
-        width: 248,
-        opacity: 1,
-        filter: 'blur(0px)',
-      }}
-      exit={{
-        opacity: 0,
-        filter: 'blur(4px)',
-      }}
-      transition={{
-        type: 'spring',
-        bounce: 0.5,
-      }}
-    >
-      <div
-        className="flex items-center gap-2"
-        style={{
-          borderRadius: 32,
-        }}
-      >
+    <div className="flex w-[248px] justify-between px-1">
+      <div className="flex items-center gap-2">
         <Button
           className="h-10 w-10 rounded-full bg-yellow-600/50 transition-colors hover:bg-yellow-600/60"
           size="icon"
@@ -121,7 +97,7 @@ const TimerView = ({ setMode }: TimerViewProps) => {
         <p className="text-sm font-medium leading-none">Timer</p>
         <Countdown isPaused={isPaused} />
       </div>
-    </motion.div>
+    </div>
   )
 }
 

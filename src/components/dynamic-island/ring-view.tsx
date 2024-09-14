@@ -19,18 +19,9 @@ const RingView = () => {
   return (
     <motion.div
       className="relative flex h-5 items-center justify-between px-2.5"
-      initial={{
-        opacity: 0,
-        filter: 'blur(4px)',
-      }}
+      initial={false}
       animate={{
         width: isSilent ? 155 : 130,
-        opacity: 1,
-        filter: 'blur(0px)',
-      }}
-      exit={{
-        opacity: 0,
-        filter: 'blur(4px)',
       }}
       transition={{
         type: 'spring',
