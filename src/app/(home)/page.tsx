@@ -1,6 +1,7 @@
 import AnimatedTabsSection from './components/animated-tabs-section'
 import AppleStoreCardSection from './components/apple-store-card-section'
 import AppleStoreListSection from './components/apple-store-list-section'
+import DynamicIslandSection from './components/dynamic-island-section'
 import EaseSection from './components/ease-section'
 import FamilyDrawerSection from './components/family-drawer-section'
 import FeedbackPopoverSection from './components/feedback-popover-section'
@@ -15,6 +16,7 @@ export default function Home() {
     <main className="flex w-screen flex-col rounded-md px-2 py-10 text-base text-accent-foreground sm:px-16 md:px-20 lg:px-32 lg:py-32 xl:px-52">
       <HeaderSection />
       <div className="animate-orchestration delay-500">
+        <DynamicIslandSection />
         <FamilyDrawerSection />
         <TrashInteractionSection />
         <MultiStepComponentSection />
