@@ -2,7 +2,7 @@ import { Card } from "../ui/card";
 
 const CardHover = () => {
   return (
-    <Card className="relative flex min-h-[530px] w-full min-w-[350px] flex-col items-center justify-center gap-12 bg-white p-6">
+    <Card className="relative flex min-h-[530px] w-full min-w-[350px] flex-col items-center justify-center gap-12 bg-background p-6">
       <a
         href="#card-hover"
         id="card-hover"
