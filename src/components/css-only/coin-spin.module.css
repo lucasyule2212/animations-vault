@@ -1,0 +1,59 @@
+.coin-container {
+  height: 56px;
+  width: 56px;
+  position: relative;
+}
+
+.animation-wrapper {
+  position: absolute;
+  transform-style: preserve-3d;
+  height: 100%;
+  width: 100%;
+  animation: flip 2.2s linear infinite;
+}
+
+.coin-side {
+  position: absolute;
+  border-radius: 0px;
+  transform: translateX(26px) rotateY(90deg);
+  width: 6.5px;
+  height: 100%;
+  background: #F8A400;
+}
+
+.coin-face {
+  position:absolute;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.coin-outer-inner {
+  background: #F8A400;
+}
+
+.coin-outer-front {
+  transform: translateZ(3px)
+}
+
+.coin-inner-front {
+  transform: rotateY(180deg) translateZ(-3px)
+}
+
+.coin-outer-back {
+  transform: rotateY(180deg) translateZ(3px)
+}
+
+.coin-inner-back {
+  transform: translateZ(-3px);
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}

@@ -1,4 +1,5 @@
 import CardHover from "@/components/css-only/card-hover"
+import CoinSpin from "@/components/css-only/coin-spin"
 import DownloadArrow from "@/components/css-only/download-arrow"
 import TextReveal from "@/components/css-only/text-reveal"
 
@@ -10,11 +11,11 @@ const CssOnlySection = () => {
       </header>
       <div className="flex flex-col gap-6">
         <CardHover />
-        <div className="border-b border-muted-foreground/10 border-dashed" />
         <div className="flex max-md:flex-col items-center gap-4">
           <DownloadArrow />
           <TextReveal />
         </div>
+        <CoinSpin/>
       </div>
     </section>
   )
