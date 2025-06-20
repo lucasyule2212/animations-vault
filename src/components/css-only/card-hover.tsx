@@ -2,6 +2,8 @@ import { Card } from "../ui/card";
 
 const CardHover = () => {
   return (
+    <div className="flex flex-col">
+      <h3 className="font-serif italic text-zinc-400">Card Hover</h3>
     <Card className="relative flex min-h-[530px] w-full min-w-[350px] flex-col items-center justify-center gap-12 bg-background p-6">
       <a
         href="#card-hover"
@@ -25,9 +27,10 @@ const CardHover = () => {
               fill="#58585F"
             />
           </svg>
-        </div>
-      </a>
-    </Card>
+          </div>
+        </a>
+      </Card>
+    </div>
   );
 }
 
