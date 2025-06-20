@@ -1,6 +1,7 @@
 import AnimatedTabsSection from './components/animated-tabs-section'
 import AppleStoreCardSection from './components/apple-store-card-section'
 import AppleStoreListSection from './components/apple-store-list-section'
+import CssOnlySection from './components/css-only-section'
 import DynamicIslandSection from './components/dynamic-island-section'
 import EaseSection from './components/ease-section'
 import FamilyDrawerSection from './components/family-drawer-section'
@@ -18,6 +19,7 @@ export default function Home() {
       <div className="animate-orchestration delay-500">
         <DynamicIslandSection />
         <FamilyDrawerSection />
+        <CssOnlySection />
         <TrashInteractionSection />
         <MultiStepComponentSection />
         <FeedbackPopoverSection />

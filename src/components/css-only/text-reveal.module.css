@@ -1,0 +1,28 @@
+.h1 {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  width: 200px;
+  height: 30px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.h1 .span,
+.h1 span {
+  display: inline-block;
+  animation: animate-text 1.3s cubic-bezier(0.19, 1, 0.22, 1) backwards;
+  animation-delay: calc(0.03s * var(--index));
+}
+
+@keyframes animate-text {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
