@@ -1,0 +1,17 @@
+.theme-overlay-inactive{
+  clip-path: inset(0px 0px 0px 0px);
+}
+
+.theme-overlay-active{
+  animation: theme-overlay-active 0.5s var(--ease-in-out-circ) forwards;
+}
+
+
+@keyframes theme-overlay-active{
+  0%{
+    clip-path: inset(0px 0px 100% 0px);
+  }
+  100%{
+    clip-path: inset(0px 0px 0px 0px);
+  }
+}
