@@ -11,6 +11,7 @@ import HoldToDeleteSection from './components/hold-to-delete-section'
 import MultiStepComponentSection from './components/multi-step-component-section'
 import MultipleStateButtonSection from './components/multiple-state-button-section'
 import SpringSection from './components/spring-section'
+import SwitchThemeSection from './components/switch-theme-section'
 import TrashInteractionSection from './components/trash-interaction-section'
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <HeaderSection />
       <div className="animate-orchestration delay-500">
         <HoldToDeleteSection />
+        <SwitchThemeSection />
         <DynamicIslandSection />
         <FamilyDrawerSection />
         <CssOnlySection />
