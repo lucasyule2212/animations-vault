@@ -1,4 +1,4 @@
-import SwitchThemeComponent from "@/components/switch-theme/switch-theme-component"
+import SwitchThemeComponent from '@/components/switch-theme/switch-theme-component'
 
 const SwitchThemeSection = () => {
   return (

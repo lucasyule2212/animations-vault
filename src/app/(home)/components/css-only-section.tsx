@@ -1,7 +1,7 @@
-import CardHover from "@/components/css-only/card-hover"
-import CoinSpin from "@/components/css-only/coin-spin"
-import DownloadArrow from "@/components/css-only/download-arrow"
-import TextReveal from "@/components/css-only/text-reveal"
+import CardHover from '@/components/css-only/card-hover'
+import CoinSpin from '@/components/css-only/coin-spin'
+import DownloadArrow from '@/components/css-only/download-arrow'
+import TextReveal from '@/components/css-only/text-reveal'
 
 const CssOnlySection = () => {
   return (
@@ -15,7 +15,7 @@ const CssOnlySection = () => {
           <DownloadArrow />
           <TextReveal />
         </div>
-        <CoinSpin/>
+        <CoinSpin />
       </div>
     </section>
   )
