@@ -25,8 +25,6 @@ const DashedText = () => {
     }
   }, [mouseText.elementY, isHovering, refText])
 
-  console.log({ clipPercentage })
-
   return (
     <Card
       ref={ref as React.RefObject<HTMLDivElement>}
