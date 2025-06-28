@@ -1,3 +1,4 @@
+import AnimatedChartSection from './components/animated-chart-section'
 import AnimatedTabsSection from './components/animated-tabs-section'
 import AppleStoreCardSection from './components/apple-store-card-section'
 import AppleStoreListSection from './components/apple-store-list-section'
@@ -22,6 +23,7 @@ export default function Home() {
       <HeaderSection />
       <div className="animate-orchestration delay-500">
         <PerformanceSection />
+        <AnimatedChartSection />
         <HoldToDeleteSection />
         <SwitchThemeSection />
         <DashedTextSection />
