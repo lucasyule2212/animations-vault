@@ -6,14 +6,21 @@ import {
   useMotionTemplate,
   useSpring,
 } from 'framer-motion'
-import { useCallback, useRef } from 'react'
+import { useCallback, useRef, useState } from 'react'
 
 const SPRING: SpringOptions = {
   damping: 18,
 }
 
+const SLOW_SPRING: SpringOptions = {
+  damping: 40,
+}
+
 const AnimatedChartComponent = () => {
-  const chartX = useSpring(0, SPRING)
+  const [isHovering, setIsHovering] = useState(false)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const chartX = useSpring(0, isHovering ? SPRING : SLOW_SPRING)
   const containerRef = useRef<HTMLDivElement>(null)
 
   const chartXValueTemplate = useMotionTemplate`inset(0px ${chartX}% 0px 0px)`
@@ -36,7 +43,23 @@ const AnimatedChartComponent = () => {
 
   return (
     <div className="flex flex-col relative items-center gap-8 pt-6 overflow-hidden border rounded-lg bg-primary w-full">
-      <div ref={containerRef} className="w-full" onPointerMove={onPointerMove}>
+      <div
+        ref={containerRef}
+        className="w-full"
+        onPointerMove={onPointerMove}
+        onPointerLeave={() => {
+          setIsHovering(false)
+          timeoutRef.current = setTimeout(() => {
+            chartX.set(0)
+          }, 1000)
+        }}
+        onPointerEnter={() => {
+          setIsHovering(true)
+          if (timeoutRef?.current) {
+            clearTimeout(timeoutRef.current as NodeJS.Timeout)
+          }
+        }}
+      >
         {/* Chart */}
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
